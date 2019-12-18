@@ -38,7 +38,11 @@ app.use(function(req, res, next) {
   next();
 });
 
-const whitelist = ["http://localhost:3000", "http://localhost:3001"];
+const whitelist = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  process.env.FRONTEND_URL
+];
 const corsOptions = {
   origin: function(origin, callback) {
     console.log(origin);
