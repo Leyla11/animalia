@@ -1,63 +1,70 @@
 const express = require("express");
-const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User");
+const passport = require("../config/passport");
 
-// Bcrypt to encrypt passwords
-const bcrypt = require("bcrypt");
-const bcryptSalt = 10;
-
-
-router.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
-});
-
-router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
-  failureRedirect: "/auth/login",
-  failureFlash: true,
-  passReqToCallback: true
-}));
-
-router.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
-});
-
+//Create
 router.post("/signup", (req, res, next) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Indicate username and password" });
-    return;
-  }
-
-  User.findOne({ username }, "username", (err, user) => {
-    if (user !== null) {
-      res.render("auth/signup", { message: "The username already exists" });
-      return;
-    }
-
-    const salt = bcrypt.genSaltSync(bcryptSalt);
-    const hashPass = bcrypt.hashSync(password, salt);
-
-    const newUser = new User({
-      username,
-      password: hashPass
-    });
-
-    newUser.save()
-    .then(() => {
-      res.redirect("/");
-    })
-    .catch(err => {
-      res.render("auth/signup", { message: "Something went wrong" });
-    })
-  });
+  User.register(req.body, req.body.password)
+    .then(user => res.status(201).json({ user }))
+    .catch(err => res.status(500).json({ err }));
 });
 
-router.get("/logout", (req, res) => {
+router.post("/login", passport.authenticate("local"), (req, res, next) => {
+  const { user } = req;
+  res.status(200).json({ user });
+});
+User;
+
+router.get("/logout", (req, res, next) => {
   req.logout();
-  res.redirect("/");
+  res.status(200).json({ msg: "Logged out" });
 });
+
+//Read
+router.get("/profile", isAuth, async (req, res, next) => {
+  await User.findById(req.user._id)
+    .then(user => res.status(200).json({ user }))
+    .catch(err => res.status(500).json({ err }));
+});
+
+router.get("/user/:id", async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id);
+    console.log(user);
+    res.status(200).json({ user });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+//Update
+router.patch("/user/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const userUpdated = await User.findByIdAndUpdate(
+      id,
+      { ...req.body },
+      { new: true }
+    );
+    res.status(202).json({ userUpdated });
+  } catch (e) {
+    res.status(500).json({ e });
+  }
+});
+
+//Delete
+router.delete("/user/:id", (req, res, next) => {
+  const { id } = req.params;
+  User.findByIdAndDelete(id)
+    .then(user => res.status(200).json({ user }))
+    .catch(error => res.status(500).json({ error }));
+});
+
+function isAuth(req, res, next) {
+  req.isAuthenticated()
+    ? next()
+    : res.status(401).json({ msg: "Log in first" });
+}
 
 module.exports = router;

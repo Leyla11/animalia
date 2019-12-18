@@ -1,15 +1,33 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const { Schema, model } = require("mongoose");
+const PLM = require("passport-local-mongoose");
 
-const userSchema = new Schema({
-  username: String,
-  password: String
-}, {
-  timestamps: {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
+const userSchema = new Schema(
+  {
+    email: {
+      type: String
+    },
+    password: {
+      type: String
+    },
+    name: String,
+    lastName: String,
+    role: {
+      type: String,
+      enum: ["ADMIN", "USUARIO"],
+      default: "USUARIO"
+    },
+    fotoPerfil: {
+      type: String,
+      default:
+        "https://1sfj1635wrts49n9bz3kpi6y-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/no-image-found.png"
+    }
+  },
+  {
+    timestamps: true,
+    versionKey: false
   }
-});
+);
 
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+userSchema.plugin(PLM, { usernameField: "email" });
+
+module.exports = model("User", userSchema);

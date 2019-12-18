@@ -1,47 +1,116 @@
-// Seeds file that remove all users and create 2 new users
-
-// To execute this seed, run from the root of the project
-// $ node bin/seeds.js
-
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const User = require("../models/User");
+const CentrosAcopio = require("../models/CentrosAcopio");
 
-const bcryptSalt = 10;
-
-mongoose
-  .connect('mongodb://localhost/backend', {useNewUrlParser: true})
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err)
-  });
-
-let users = [
+const data = [
   {
-    username: "alice",
-    password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
+    place: "Protectora Ncional De Animales",
+    address:
+      "Pirineos 120, Portales Nte, Benito Juárez, 03300 Ciudad de México, CDMX",
+    contactNumber: "55 5604 2482",
+    website: "https://pnamexico.com/",
+
+    longitud: -99.2546255,
+    latitud: 19.4256881,
+
   },
   {
-    username: "bob",
-    password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
-  }
-]
+    place:
+      "Refugio Franciscano AC",
+    address:
+      "Carretera México-Toluca KM 17.5, Paseo de las Lomas, 05100 Cuajimalpa de Morelos, CDMX",
+    contactNumber: "55 2661 0507",
+    longitud: -99.3045319,
+    latitud: 19.4236036,
+    horario: "09:00 - 18:00"
+  },
+  {
+    place: "Albergue En Busca De Un Hogar",
+    address: "03020 de, La Morena 1012, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
+    longitud: -99.2238194,
+    latitud: 19.4433579,
+    
+    
+  },
+  {
+    place: "Centro de Adopción y Rescate Animal, A.C.",
+    contactNumber: "55 5877 3744",
 
-User.deleteMany()
-.then(() => {
-  return User.create(users)
-})
-.then(usersCreated => {
-  console.log(`${usersCreated.length} users created with the following id:`);
-  console.log(usersCreated.map(u => u._id));
-})
-.then(() => {
-  // Close properly the connection to Mongoose
-  mongoose.disconnect()
-})
-.catch(err => {
-  mongoose.disconnect()
-  throw err
-})
+    
+  },
+  {
+    place: "La Casa del Mestizo",
+    address:
+      "Nayarit 31, Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX",
+    contactNumber: "55 40621 423",
+    longitud: -99.2313696,
+    latitud: 19.4445069,
+    
+  },
+  {
+    place: "Fundación Antonio Haghenbeck y de la Lama I.A.P.",
+    address:
+      "Av. 5 de Mayo 10E Officina 33 2. planta, Centro Histórico de la Cdad. de México, 06000 Ciudad de México, CDMX",
+    website: "fahl.com.mx",
+    contactNumber: "55 5219 3610",
+    latitud: 19.4611071,
+    longitud: -99.256072
+  },
+  {
+    place: "Milagros Caninos",
+    email: "www.milagroscaninos.org",
+   
+  },
+  {
+    place: "Adopta, Cambia un destino",
+    address: "Av. Constituyentes 653-501, 16 de septiembre, C. P. 11810.",
+    contactNumber: "55 5512 0013",
+    website: "cambiaundestino.org",
+
+  },
+  {
+    place: "Adoptame Mexico",
+    website: "www.adoptamemexico.com",
+  
+  },
+  {
+    place: "Equipo Protector de toda Expresión de Vida. EPTEV",
+    contactNumber: "77 1191 7262",
+    website: "perrosygatosenadopcion.jimdo.com",
+    
+  },
+  {
+    place: "Comunidad Animalera Trabajando, A.C. COAT",
+    website: "www.coat.org.mx",
+  },
+  {
+    place: "UCPA de Corregidora",
+    address:
+      "Calle 5 de mayo # 10 21 de marzo México Querétaro",
+    contactNumber: "44 2225 4989",
+  },
+  {
+    place: "Angeles Peludos",
+    address:
+      "Circuito Misioneros 1B 53110 Ciudad Satélite, Mexico, Mexico",
+    contactNumber: "55 5877 6551"
+  },
+  {
+    place: "Albergue San Crsitobal",
+    address: "Calle Venustiano Carranza #18, Gustavo A. Madero, Cuautepec Barrio Alto, 07100 Ciudad de México, CDMX",
+    contactNumber: "55 2911 8150",
+    website: "www.alberguesancristobal.org",
+    latitud: 19.5128049,
+    longitud: -99.2502577
+    
+  },
+  {
+    place: "Cambia un destino Hospital de animales",
+    address:
+      " Av Chapultepec 238, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX",
+    contactNumber: "55 3330 4741",
+    email: "cambiaundestino.org",
+    
+    latitud: 19.4465457,
+    longitud: 19.4465457
+  },
+  

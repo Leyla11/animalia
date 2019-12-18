@@ -1,0 +1,137 @@
+@import "node_modules/bulmaswatch/minty/bulmaswatch";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.navbar-item img.logo {
+  max-height: 200px;
+  width: 120px;
+}
+
+.navbar-menu {
+  background-color: #ebdef0;
+}
+.navbar-brand {
+  background-color: #ebdef0;
+}
+
+.login-wrapper {
+  background-image: url("https://cifrasonlinecomve.files.wordpress.com/2019/04/gato.jpg?w=728&h=280&crop=1 728w, https://cifrasonlinecomve.files.wordpress.com/2019/04/gato.jpg?w=150&h=58&crop=1 150w, https://cifrasonlinecomve.files.wordpress.com/2019/04/gato.jpg?w=500&h=192&crop=1 500w");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 103vh;
+  justify-content: center;
+}
+
+.signup-wrapper {
+  background-image: url("https://cdn.pixabay.com/photo/2017/08/07/18/57/dog-2606759_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 103vh;
+  justify-content: center;
+}
+
+.signup-button {
+  padding-top: 25px;
+}
+
+.login-button {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.home-button {
+  display: flex;
+  padding-top: 30px;
+  justify-content: space-around;
+}
+
+.question-wrapper {
+  padding-bottom: 20px;
+}
+
+.landing-container {
+  background-image: url("https://cdn.pixabay.com/photo/2019/12/13/19/49/dog-food-4693738_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 103vh;
+}
+
+.footer {
+  background-color: #ebdef0;
+  font-size: 35px;
+  text-align: center;
+}
+
+.add-center-button {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.centers-button {
+  padding-right: 10px;
+}
+
+.ver-button {
+  display: flex;
+  justify-content: center;
+}
+
+.add-new-box {
+  padding: 50px 0;
+}
+
+.category-center {
+  padding-bottom: 20px;
+}
+
+.quieroContribuir-button {
+  display: flex;
+  justify-content: center;
+}
+
+.button-contribution {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-wrapper {
+  padding: 10% 0%;
+}
+
+.profile-images {
+  display: flex;
+  justify-content: center;
+  padding: 5% 0;
+}
+
+.profile-p {
+  text-align: center;
+}
+
+.top-home {
+  padding-bottom: 8%;
+}
+
+.img-animalia {
+  display: flex;
+  justify-content: center;
+}
