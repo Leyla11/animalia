@@ -17,11 +17,9 @@ class Center extends Component {
 
   componentDidMount() {
     axios
-      .get(
-        `https://young-beyond-07801.herokuapp.com/api/center/${this.props.match.params.id}`
-      )
+      .get(`http://localhost:3000/api/centers/${this.props.match.params.id}`)
       .then(res => {
-        this.setState({ center: res.data.place });
+        this.setState({ shelter: res.data.place });
         const map = new mapboxgl.Map({
           container: this.mapContainer,
           style: "mapbox://styles/mapbox/streets-v9"
@@ -33,7 +31,7 @@ class Center extends Component {
               position.coords.longitude,
               position.coords.latitude
             ];
-            map.setZoom(12).setCenter(user_location);
+            map.setZoom(12).setShelter(user_location);
             new mapboxgl.Marker({ color: "red" })
               .setLngLat(user_location)
               .setPopup(new mapboxgl.Popup().setHTML("<h3>You are here</h3>"))
@@ -41,7 +39,7 @@ class Center extends Component {
           });
         }
 
-        if (this.state.center.longitud && this.state.center.latitud) {
+        if (this.state.center.longitud && this.state.shelter.latitud) {
           const center_location = [
             this.state.center.longitud,
             this.state.center.latitud
@@ -82,8 +80,8 @@ class Center extends Component {
       <Layout history={this.props.history}>
         <div className="section">
           <div className="container">
-            <p className="has-text-centered category-center">
-              Categoria: {this.state.center.tipoResiduo}
+            <p className="has-text-centered center">
+              Categoria: {this.state.center.Shelter}
             </p>
 
             <div className="columns">
@@ -96,34 +94,28 @@ class Center extends Component {
                 <div className="card">
                   <header className="card-header">
                     <p className="card-header-title card-text">
-                      {this.state.center.place}
+                      {this.state.shelter.place}
                     </p>
                   </header>
                   <div className="card-content">
                     <div className="content">
-                      <p>Direccion: {this.state.center.address}</p>
+                      <p>Adress: {this.state.shelter.address}</p>
                       <p>
                         Email:{" "}
-                        {this.state.center.email
-                          ? this.state.center.email
+                        {this.state.shelter.email
+                          ? this.state.shelter.email
                           : "Not Aviable"}
                       </p>
                       <p>
-                        Numero:{" "}
-                        {this.state.center.contactNumber
-                          ? this.state.center.contactNumber
+                        Number:{" "}
+                        {this.state.shelter.contactNumber
+                          ? this.state.shelter.contactNumber
                           : "Not Aviable"}
                       </p>
                       <p>
                         Website:{" "}
-                        {this.state.center.website
-                          ? this.state.center.website
-                          : "Not Aviable"}
-                      </p>
-                      <p>
-                        Horario:{" "}
-                        {this.state.center.horario
-                          ? this.state.center.horario
+                        {this.state.shelter.website
+                          ? this.state.shelter.website
                           : "Not Aviable"}
                       </p>
                     </div>
@@ -145,10 +137,11 @@ class Center extends Component {
               </div>
             </div>
           </div>
+          //{" "}
         </div>
       </Layout>
     );
   }
 }
-Center.contextType = MyContext;
-export default Center;
+Shelter.contextType = MyContext;
+export default Centers;

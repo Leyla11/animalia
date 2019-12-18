@@ -17,7 +17,7 @@ export default class Shelter extends Component {
     });
   };
 
-  getFilteredCenters = async () => {
+  getallshelters = async () => {
     const response = await axios.get(
       `http://localhost:3001/${this.state.center}`
     );
@@ -37,11 +37,6 @@ export default class Shelter extends Component {
     this.setState({ center: e.target.value });
   };
 
-  componentDidMount() {
-    this.getFilteredCenters();
-    this.getCenters();
-  }
-
   render() {
     const { centers } = this.state;
 
@@ -55,16 +50,16 @@ export default class Shelter extends Component {
             </div>
           </div>
           <div className="control centers-button">
-            <button
-              type="submit"
-              className="button is-primary"
-              onClick={this.getFilteredCenters}
-            >
-              See All
-            </button>
+            <Link to="/allshelters">
+              <button
+                type="submit"
+                className="button is-primary"
+                onClick={this.getallshelters}
+              >
+                See All
+              </button>
+            </Link>
           </div>
-          {/* </div> */}
-          {/* </div> */}
         </div>
 
         <div className="columns is-centered">
@@ -86,7 +81,7 @@ export default class Shelter extends Component {
                       {console.log(center)}
                       <td></td>
                       <td>
-                        <Link to={`/center/${center._id}`}>Ver</Link>
+                        <Link to={`/center/${center._id}`}>See</Link>
                       </td>
                     </tr>
                   ))

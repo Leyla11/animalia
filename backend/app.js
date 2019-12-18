@@ -11,7 +11,7 @@ const session = require("express-session");
 const passport = require("./config/passport");
 
 mongoose
-  .connect("mongodb://localhost:27017/animalia", {
+  .connect(process.env.DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
@@ -52,8 +52,14 @@ const corsOptions = {
   enablePreflight: true
 };
 
-app.use(cors(corsOptions));
-
+//este cors es la configyracion inicial
+app.use(
+  cors({
+    origin: whitelist,
+    credentials: true
+  })
+);
+//app.use(cors());
 app.use(
   session({
     resave: false,

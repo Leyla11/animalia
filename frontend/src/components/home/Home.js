@@ -46,7 +46,7 @@ export default class Home extends Component {
                     </>
                   ) : (
                     <>
-                      <NavLink exact to="/centers">
+                      <NavLink exact to="/shelter">
                         <button className="button is-medium is-primary">
                           {" "}
                           Shelters{" "}

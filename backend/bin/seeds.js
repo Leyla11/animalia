@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const CentrosAcopio = require("../models/CentrosAcopio");
+const RefugioAlbergue = require("../models/RefugioAlbergue");
 
 const data = [
   {
@@ -10,41 +10,33 @@ const data = [
     website: "https://pnamexico.com/",
 
     longitud: -99.2546255,
-    latitud: 19.4256881,
-
+    latitud: 19.4256881
   },
   {
-    place:
-      "Refugio Franciscano AC",
+    place: "Refugio Franciscano AC",
     address:
       "Carretera México-Toluca KM 17.5, Paseo de las Lomas, 05100 Cuajimalpa de Morelos, CDMX",
     contactNumber: "55 2661 0507",
     longitud: -99.3045319,
-    latitud: 19.4236036,
-    horario: "09:00 - 18:00"
+    latitud: 19.4236036
   },
   {
     place: "Albergue En Busca De Un Hogar",
-    address: "03020 de, La Morena 1012, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
+    address:
+      "03020 de, La Morena 1012, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
     longitud: -99.2238194,
-    latitud: 19.4433579,
-    
-    
+    latitud: 19.4433579
   },
   {
     place: "Centro de Adopción y Rescate Animal, A.C.",
-    contactNumber: "55 5877 3744",
-
-    
+    contactNumber: "55 5877 3744"
   },
   {
     place: "La Casa del Mestizo",
-    address:
-      "Nayarit 31, Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX",
+    address: "Nayarit 31, Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX",
     contactNumber: "55 40621 423",
     longitud: -99.2313696,
-    latitud: 19.4445069,
-    
+    latitud: 19.4445069
   },
   {
     place: "Fundación Antonio Haghenbeck y de la Lama I.A.P.",
@@ -57,60 +49,70 @@ const data = [
   },
   {
     place: "Milagros Caninos",
-    email: "www.milagroscaninos.org",
-   
+    email: "www.milagroscaninos.org"
   },
   {
     place: "Adopta, Cambia un destino",
     address: "Av. Constituyentes 653-501, 16 de septiembre, C. P. 11810.",
     contactNumber: "55 5512 0013",
-    website: "cambiaundestino.org",
-
+    website: "cambiaundestino.org"
   },
   {
     place: "Adoptame Mexico",
-    website: "www.adoptamemexico.com",
-  
+    website: "www.adoptamemexico.com"
   },
   {
     place: "Equipo Protector de toda Expresión de Vida. EPTEV",
     contactNumber: "77 1191 7262",
-    website: "perrosygatosenadopcion.jimdo.com",
-    
+    website: "perrosygatosenadopcion.jimdo.com"
   },
   {
     place: "Comunidad Animalera Trabajando, A.C. COAT",
-    website: "www.coat.org.mx",
+    website: "www.coat.org.mx"
   },
   {
     place: "UCPA de Corregidora",
-    address:
-      "Calle 5 de mayo # 10 21 de marzo México Querétaro",
-    contactNumber: "44 2225 4989",
+    address: "Calle 5 de mayo # 10 21 de marzo México Querétaro",
+    contactNumber: "44 2225 4989"
   },
   {
     place: "Angeles Peludos",
-    address:
-      "Circuito Misioneros 1B 53110 Ciudad Satélite, Mexico, Mexico",
+    address: "Circuito Misioneros 1B 53110 Ciudad Satélite, Mexico, Mexico",
     contactNumber: "55 5877 6551"
   },
   {
     place: "Albergue San Crsitobal",
-    address: "Calle Venustiano Carranza #18, Gustavo A. Madero, Cuautepec Barrio Alto, 07100 Ciudad de México, CDMX",
+    address:
+      "Calle Venustiano Carranza #18, Gustavo A. Madero, Cuautepec Barrio Alto, 07100 Ciudad de México, CDMX",
     contactNumber: "55 2911 8150",
     website: "www.alberguesancristobal.org",
     latitud: 19.5128049,
     longitud: -99.2502577
-    
   },
   {
-    place: "Cambia un destino Hospital de animales",
+    place: "Cambia un destino Hospital de Animales",
     address:
       " Av Chapultepec 238, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX",
     contactNumber: "55 3330 4741",
     email: "cambiaundestino.org",
-    
     latitud: 19.4465457,
     longitud: 19.4465457
-  },
-  
+  }
+];
+
+mongoose
+  .connect("http://localhost:3000/api/allshelters/", { useNewUrlParser: true })
+  .then(async () => {
+    const insertRefugioAlbergueResult = await Data.insertMany(data);
+    insertDataResult.forEach(({ place }) =>
+      console.log(`Inserted data: ${place}`)
+    );
+    const insertRefugioAlbergue = await RefugioAlbuergue.insertMany(refugio);
+    insertRefugioAlbergueResult.forEach(({ title }) =>
+      console.log(`Inserted Refugio: ${title}`)
+    );
+    mongoose.connection.close();
+  })
+  .catch(err => {
+    console.error("Error connecting to mongo", err);
+  });

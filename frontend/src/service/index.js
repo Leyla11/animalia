@@ -1,10 +1,8 @@
 import axios from "axios";
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = "production";
 
-const baseURL = isProduction
-  ? "https://young-beyond-07801.herokuapp.com"
-  : "http://localhost:3000/api";
+const baseURL = isProduction ? "http://localhost:3000/api" : "";
 
 const service = axios.create({ withCredentials: true, baseURL });
 

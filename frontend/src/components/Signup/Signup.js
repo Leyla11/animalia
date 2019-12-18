@@ -20,10 +20,10 @@ class Signup extends Component {
 
   onSubmit = e => {
     e.preventDefault();
+    console.log("submit");
     MY_SERVICE.signup(this.state.user)
       .then(response => {
         let userMsg = response.data.msg;
-        console.log(userMsg);
         this.props.history.push("/login");
       })
       .catch(error => {
@@ -70,7 +70,7 @@ class Signup extends Component {
                   className="input"
                   onChange={this.handleInput}
                   type="text"
-                  name="lastName"
+                  name="lastname"
                 />
 
                 <label className="label has-text-light is-size-4">

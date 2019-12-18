@@ -21,16 +21,16 @@ export default class CreateNew extends Component {
     this.setState({ center });
   };
 
-  addNewCenter = async () => {
-    const { data } = await CENTER_SERVICE.addCenter(this.state.center);
+  addNew = async () => {
+    const { data } = await CENTER_SERVICE.addNew(this.state.shelter);
     console.log(data);
   };
 
   addCenter = e => {
     e.preventDefault();
     const { center } = this.state;
-    this.addNewCenter();
-    //this.props.history.push("/shelters");
+    this.addNewShelter();
+    this.props.history.push("/shelters");
   };
 
   updateValue = e => {
@@ -48,7 +48,7 @@ export default class CreateNew extends Component {
         <div className="new-center-wrapper">
           <div className="columns is-centered">
             <div className="add-new-box">
-              <form className="columns is-5 box" onSubmit={this.addCenter}>
+              <form className="columns is-5 box" onSubmit={this.addNew}>
                 <div className="column">
                   <h1 className="title is-3">Add shelter</h1>
 

@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const PLM = require("passport-local-mongoose");
 
-const centrosSchema = new Schema(
+const shelterSchema = new Schema(
   {
     place: String,
     email: {
@@ -14,16 +14,7 @@ const centrosSchema = new Schema(
     },
     longitud: Number,
     latitud: Number,
-    horario: String,
     contactNumber: String,
-    fotoPerfil: {
-      type: String,
-      default:
-        "https://1sfj1635wrts49n9bz3kpi6y-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/no-image-found.png"
-    },
-    tipoAlbergue: {
-      type: String
-    },
     website: String
   },
   {
@@ -32,6 +23,6 @@ const centrosSchema = new Schema(
   }
 );
 
-centrosSchema.plugin(PLM, { usernameField: "email" });
+shelterSchema.plugin(PLM, { usernameField: "email" });
 
-module.exports = model("RefugioAlbergue", centrosSchema);
+module.exports = model("RefugioAlbergue", shelterSchema);

@@ -5,7 +5,8 @@ import { MyContext } from "../../context";
 
 class Login extends Component {
   state = {
-    user: {}
+    user: {},
+    password: {}
   };
 
   handleInput = e => {
@@ -19,20 +20,37 @@ class Login extends Component {
     this.setState({ loggedUser });
   };
 
+  // onSubmit = e => {
+  //   e.preventDefault();
+  //   MY_SERVICE.login(this.state.user.password)
+  //     .then(response => {
+  //       this.context.logUser(response.data.user);
+  //       localStorage.setItem("user", JSON.stringify(response.data.user));
+  //       this.props.history.push("/home");
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // };
+
   onSubmit = e => {
     e.preventDefault();
     MY_SERVICE.login(this.state.user)
       .then(response => {
-        this.context.logUser(response.data.user);
-        localStorage.setItem("user", JSON.stringify(response.data.user));
+        this.context.logUser(response.data.user.password);
+        localStorage.setItem(
+          "user",
+          JSON.stringify(response.data.user.password)
+        );
         this.props.history.push("/home");
       })
       .catch(error => {
-        console.log(error);
+        console.log("meow");
       });
   };
 
   render() {
+    // const { userMsg } = this.state.user.password;
     return (
       <div className="login-wrapper">
         <br />

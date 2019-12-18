@@ -5,16 +5,20 @@ const passport = require("../config/passport");
 
 //Create
 router.post("/signup", (req, res, next) => {
-  User.register(req.body, req.body.password)
-    .then(user => res.status(201).json({ user }))
+  console.log(req.body);
+  User.register({ ...req.body }, req.body.password)
+    .then(user => {
+      res.status(201).json({ user });
+    })
     .catch(err => res.status(500).json({ err }));
 });
 
 router.post("/login", passport.authenticate("local"), (req, res, next) => {
   const { user } = req;
+  console.log(user);
   res.status(200).json({ user });
 });
-User;
+// User;
 
 router.get("/logout", (req, res, next) => {
   req.logout();
