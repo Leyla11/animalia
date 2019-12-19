@@ -20,19 +20,6 @@ class Login extends Component {
     this.setState({ loggedUser });
   };
 
-  // onSubmit = e => {
-  //   e.preventDefault();
-  //   MY_SERVICE.login(this.state.user.password)
-  //     .then(response => {
-  //       this.context.logUser(response.data.user);
-  //       localStorage.setItem("user", JSON.stringify(response.data.user));
-  //       this.props.history.push("/home");
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
-  // };
-
   onSubmit = e => {
     e.preventDefault();
     MY_SERVICE.login(this.state.user)
@@ -50,7 +37,6 @@ class Login extends Component {
   };
 
   render() {
-    // const { userMsg } = this.state.user.password;
     return (
       <div className="login-wrapper">
         <br />

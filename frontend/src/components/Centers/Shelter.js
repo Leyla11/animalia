@@ -5,6 +5,7 @@ import axios from "axios";
 import Layout from "../Layout";
 import { MyContext } from "../../context/index";
 import { NavLink } from "react-router-dom";
+import refugios from "../";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZGF5YW4xMSIsImEiOiJjazQzMTZqdngwMDJjM25vMmFnODd6azBkIn0.drLXBFDWxOjLOzy3MzxgtA";
@@ -138,7 +139,6 @@ class Center extends Component {
               </div>
             </div>
           </div>
-          //{" "}
         </div>
       </Layout>
     );

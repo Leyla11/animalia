@@ -36,7 +36,7 @@ export default class Shelter extends Component {
   updateValue = e => {
     this.setState({ center: e.target.value });
   };
-  //hola
+
   render() {
     const { centers } = this.state;
 

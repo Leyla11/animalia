@@ -1,6 +1,5 @@
 import React, { Component, createContext } from "react";
 import MY_SERVICE from "../service/index";
-//Se utiliza para consumir las peticiones de axios
 
 export const MyContext = createContext();
 
