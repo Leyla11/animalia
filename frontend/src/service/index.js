@@ -8,7 +8,7 @@ const isProduction = "production";
 
 const service = axios.create({
   withCredentials: true,
-  baseURL: "https://ancient-mesa-76696.herokuapp.com/"
+  baseURL: "https://ancient-mesa-76696.herokuapp.com/api"
 });
 
 const MY_SERVICE = {
