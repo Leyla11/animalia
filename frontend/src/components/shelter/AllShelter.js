@@ -5,12 +5,12 @@ import axios from "axios";
 import Layout from "../Layout";
 import { MyContext } from "../../context/index";
 import { NavLink } from "react-router-dom";
-import refugios from "../../refugios.json"
+import refugios from "../../refugios.json";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWx6eiIsImEiOiJjandrNmVzNzUwNWZjNGFqdGcwNmJ2ZWhpIn0.ybY6wnAtJwj-Tq0c46sW6A";
 
-  export default class Shelter extends Component {
+export default class Shelter extends Component {
   state = {
     center: {},
     shelters: {},
@@ -31,62 +31,62 @@ mapboxgl.accessToken =
     const data = this.props.match.params;
 
     this.setState({ center: res.data.place });
-        const map = new mapboxgl.Map({
-          container: this.mapContainer,
-          //style: "mapbox://styles/mapbox/streets-v9  
+    const map = new mapboxgl.Map({
+      container: this.mapContainer
+      //style: "mapbox://styles/mapbox/streets-v9
     });
-    return shelter ;
+    return shelter;
   }
 
-      //   if (navigator.geolocation) {
-      //     navigator.geolocation.getCurrentPosition(function(position) {
-      //       const user_location = [
-      //         position.coords.longitude,
-      //         position.coords.latitude
-      //       ];
-      //       map.setZoom(12).setShelter(user_location);
-      //       new mapboxgl.Marker({ color: "red" })
-      //         .setLngLat(user_location)
-      //         .setPopup(new mapboxgl.Popup().setHTML("<h3> You are here </h3>"))
-      //         .addTo(map);
-      //     });
-      //   }
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(function(position) {
+  //       const user_location = [
+  //         position.coords.longitude,
+  //         position.coords.latitude
+  //       ];
+  //       map.setZoom(12).setShelter(user_location);
+  //       new mapboxgl.Marker({ color: "red" })
+  //         .setLngLat(user_location)
+  //         .setPopup(new mapboxgl.Popup().setHTML("<h3> You are here </h3>"))
+  //         .addTo(map);
+  //     });
+  //   }
 
-      //   if (this.state.shelter.longitud && this.state.shelter.latitud) {
-      //     const shelter_location = [
-      //       this.state.shelter.longitud,
-      //       this.state.shelter.latitud
-      //     ];
-      //     new mapboxgl.Marker({ color: "#33BBFF" })
-      //       .setLngLat(shelter_location)
-      //       .setPopup(new mapboxgl.Popup().setHTML("<h3>Posting</h3>"))
-      //       .addTo(map);
-      //   }
+  //   if (this.state.shelter.longitud && this.state.shelter.latitud) {
+  //     const shelter_location = [
+  //       this.state.shelter.longitud,
+  //       this.state.shelter.latitud
+  //     ];
+  //     new mapboxgl.Marker({ color: "#33BBFF" })
+  //       .setLngLat(shelter_location)
+  //       .setPopup(new mapboxgl.Popup().setHTML("<h3>Posting</h3>"))
+  //       .addTo(map);
+  //   }
 
-      //   map.addControl(
-      //     new mapboxgl.GeolocateControl({
-      //       positionOptions: {
-      //         enableHighAccuracy: true
-      //       },
-      //       trackUserLocation: true,
-      //       showUserLocation: true
-      //     })
-      //   );
+  //   map.addControl(
+  //     new mapboxgl.GeolocateControl({
+  //       positionOptions: {
+  //         enableHighAccuracy: true
+  //       },
+  //       trackUserLocation: true,
+  //       showUserLocation: true
+  //     })
+  //   );
 
-      //   map.addControl(
-      //     new MapboxDirections({
-      //       accessToken: mapboxgl.accessToken,
-      //       unit: "metric",
-      //       language: "es",
-      //       placeholderOrigin: "Select your place",
-      //       placeholderDestination: "Select your destination"
-      //     }),
-      //     "top-left"
-      //   );
+  //   map.addControl(
+  //     new MapboxDirections({
+  //       accessToken: mapboxgl.accessToken,
+  //       unit: "metric",
+  //       language: "es",
+  //       placeholderOrigin: "Select your place",
+  //       placeholderDestination: "Select your destination"
+  //     }),
+  //     "top-left"
+  //   );
 
-      //   map.addControl(new mapboxgl.NavigationControl());
-      // };
-  
+  //   map.addControl(new mapboxgl.NavigationControl());
+  // };
+
   render() {
     const { user } = this.state;
     return (
@@ -155,6 +155,5 @@ mapboxgl.accessToken =
       </Layout>
     );
   }
-
+}
 // Shelter.contextType = MyContext;
-
