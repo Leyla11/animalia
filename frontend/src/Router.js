@@ -13,6 +13,7 @@ import CreateNew from "./components/shelter/AddNew";
 import Test from "./components/Profile/Test";
 import Contribution from "./components/Profile/Contribution";
 import ContributionList from "./components/Profile/ContributionList";
+import Shell from "./components/shelter/AllShelter";
 
 const Router = () => (
   <BrowserRouter>
