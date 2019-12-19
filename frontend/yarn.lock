@@ -1093,9 +1093,10 @@
   resolved "https://registry.yarnpkg.com/@mapbox/jsonlint-lines-primitives/-/jsonlint-lines-primitives-2.0.2.tgz#ce56e539f83552b58d10d672ea4d6fc9adc7b234"
   integrity sha1-zlblOfg1UrWNENZy6k1vya3HsjQ=
 
-"@mapbox/mapbox-gl-directions@github:mapbox/mapbox-gl-directions":
+"@mapbox/mapbox-gl-directions@^4.0.2":
   version "4.0.2"
-  resolved "https://codeload.github.com/mapbox/mapbox-gl-directions/tar.gz/236871f890db6eb60b4cada512a411d41f4b6d2e"
+  resolved "https://registry.yarnpkg.com/@mapbox/mapbox-gl-directions/-/mapbox-gl-directions-4.0.2.tgz#5396d02cd9b4fbbc5d263d18ad77f7be96b18653"
+  integrity sha512-xgt8q0mEAuOwB0tLpYCUGnZK6ihtFe8iPVHCaoMw49tdq+ACADzFMYy64y+eI5nGme55zQa09Z4Ah3cECT0pCQ==
   dependencies:
     "@mapbox/polyline" "^1.0.0"
     babel-plugin-transform-inline-environment-variables "^6.8.0"
