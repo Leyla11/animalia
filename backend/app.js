@@ -31,21 +31,6 @@ const debug = require("debug")(
 
 const app = express();
 
-app.use(function(req, res, next) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-
-const whitelist = [
-  "http://localhost:3000",
-  "http://localhost:3001",
-  process.env.FRONTEND_URL
-];
 const corsOptions = {
   origin: function(origin, callback) {
     console.log(origin);
@@ -66,6 +51,23 @@ app.use(
     credentials: true
   })
 );
+
+app.use(function(req, res, next) {
+  // res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
+const whitelist = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  process.env.FRONTEND_URL
+];
+
 //app.use(cors());
 app.use(
   session({
