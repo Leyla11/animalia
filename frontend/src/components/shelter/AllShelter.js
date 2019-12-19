@@ -96,7 +96,7 @@ export default class Shelter extends Component {
     return (
       <div>
         shelters.map((shelter, index)=>(
-        <div key={index}>{shelter.place}</div>) )
+        <div key={index}>{shelters.place}</div>) )
       </div>
       // <Layout history={this.props.history}>
       //   <div className="section">
