@@ -38,7 +38,7 @@ export default class Shelter extends Component {
   // }
   componentWillMount() {
     this.setState(() => {
-      const place = refugios.find();
+      const shelters = refugios.find();
       return { shelters };
     });
   }
