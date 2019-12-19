@@ -44,12 +44,7 @@ const corsOptions = {
   enablePreflight: true
 };
 
-const whitelist = [
-  "https://app.netlify.com/sites/suspicious-villani-0c139b",
-  "http://localhost:3000",
-  "http://localhost:3001",
-  process.env.FRONTEND_URL
-];
+const whitelist = "https://app.netlify.com/sites/suspicious-villani-0c139b";
 
 //este cors es la configyracion inicial
 app.use(
