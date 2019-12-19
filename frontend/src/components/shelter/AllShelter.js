@@ -92,16 +92,16 @@ export default class Shelter extends Component {
       <Layout history={this.props.history}>
         <div className="section">
           <div className="container">
-            <p className="has-text-centered category-center">
+            {/* <p className="has-text-centered category-center">
               Categoria: {this.state.shelter.place}
-            </p>
+            </p> */}
 
             <div className="columns">
-              <div
+              {/* <div
                 className="column is -7 map"
                 style={{ width: "50vw", height: "90vh" }}
                 ref={e => (this.mapContainer = e)}
-              />
+              /> */}
               <div className="column is-5 data">
                 <div className="card">
                   <header className="card-header">

@@ -94,7 +94,7 @@ export default class Layout extends Component {
           <div className="content has-text-centered">
             <p className="has-text-black">
               <strong className="has-text-black">Animalia</strong> by{" "}
-              {/* <a href="https://github.com/Leyla11">Diana Cruz</a>. */}
+              <a href="https://github.com/Leyla11">Diana Cruz</a>.
             </p>
           </div>
         </footer>
