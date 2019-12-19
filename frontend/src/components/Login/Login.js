@@ -45,7 +45,7 @@ class Login extends Component {
         this.props.history.push("/home");
       })
       .catch(error => {
-        console.log("meow");
+        console.log(error);
       });
   };
 
