@@ -33,10 +33,9 @@ class Shelter extends Component {
     this.setState({ center: res.data.place });
         const map = new mapboxgl.Map({
           container: this.mapContainer,
-          style: "mapbox://styles/mapbox/streets-v9"
-
-      return shelter ;
+          style: "mapbox://styles/mapbox/streets-v9  
     });
+    return shelter ;
   }
 
         if (navigator.geolocation) {
