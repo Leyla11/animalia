@@ -30,10 +30,10 @@ export default class Shelter extends Component {
   componentWillMount() {
     const data = this.props.match.params;
     this.setState({ center: data.place });
-    const map = new mapboxgl.Map({
-      container: this.mapContainer
-      //style: "mapbox://styles/mapbox/streets-v9
-    });
+    // const map = new mapboxgl.Map({
+    //   container: this.mapContainer
+    //   //style: "mapbox://styles/mapbox/streets-v9
+    // });
     return Shelter;
   }
 
