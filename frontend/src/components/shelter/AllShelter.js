@@ -12,8 +12,8 @@ mapboxgl.accessToken =
 
 export default class Shelter extends Component {
   state = {
-    center: {},
-    shelters: {},
+    // center: {},
+    shelters: undefined,
     user: JSON.parse(localStorage.getItem("user"))
   };
 
@@ -36,7 +36,7 @@ export default class Shelter extends Component {
   //   // });
   //   return Shelter;
   // }
-  componentWillMount() {
+  componentDidMount() {
     this.setState(() => {
       const shelters = refugios.find();
       return { shelters };
