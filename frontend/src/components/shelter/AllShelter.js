@@ -5,6 +5,7 @@ import axios from "axios";
 import Layout from "../Layout";
 import { MyContext } from "../../context/index";
 import { NavLink } from "react-router-dom";
+import 
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWx6eiIsImEiOiJjandrNmVzNzUwNWZjNGFqdGcwNmJ2ZWhpIn0.ybY6wnAtJwj-Tq0c46sW6A";
@@ -12,18 +13,29 @@ mapboxgl.accessToken =
 class Shelter extends Component {
   state = {
     center: {},
+    shelters: {},
     user: JSON.parse(localStorage.getItem("user"))
   };
 
-  componentDidMount() {
-    axios
-      .get(`http://localhost:3000/api/center/${this.props.match.params.id}`)
-      .then(res => {
-        this.setState({ center: res.data.place });
-        const map = new mapboxgl.Map({
-          container: this.mapContainer,
-          style: "mapbox://styles/mapbox/streets-v9"
-        });
+  // componentDidMount() {
+  //   axios
+  //     .get(`http://localhost:3000/api/center/${this.props.match.params.id}`)
+  //     .then(res => {
+  //       this.setState({ center: res.data.place });
+  //       const map = new mapboxgl.Map({
+  //         container: this.mapContainer,
+  //         style: "mapbox://styles/mapbox/streets-v9"
+  //       });
+
+  componentWillMount() {
+    const data = this.props.match.params;
+
+    this.setState(() => {
+      const shelters = data
+
+      return  shelters ;
+    });
+  }
 
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -72,8 +84,8 @@ class Shelter extends Component {
         );
 
         map.addControl(new mapboxgl.NavigationControl());
-      });
-  }
+      };
+  
   render() {
     const { user } = this.state;
     return (
@@ -81,7 +93,7 @@ class Shelter extends Component {
         <div className="section">
           <div className="container">
             <p className="has-text-centered category-center">
-              Categoria: {this.state.shelter.shelter}
+              Categoria: {this.state.shelter.place}
             </p>
 
             <div className="columns">
@@ -142,6 +154,6 @@ class Shelter extends Component {
       </Layout>
     );
   }
-}
+
 Shelter.contextType = MyContext;
 export default Shelter;
