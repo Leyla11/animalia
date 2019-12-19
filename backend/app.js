@@ -14,9 +14,7 @@ mongoose
   .connect(
     "mongodb+srv://pelusa:amqlichita@cluster0-bnvxq.mongodb.net/test?retryWrites=true&w=majoritymongodb+srv://pelusa:amqlichita@cluster0-bnvxq.mongodb.net/test?retryWrites=true&w=majority",
     {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true
+      useNewUrlParser: true
     }
   )
   .then(x =>
