@@ -11,11 +11,14 @@ const session = require("express-session");
 const passport = require("./config/passport");
 
 mongoose
-  .connect(process.env.DB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-  })
+  .connect(
+    "mongodb+srv://pelusa:amqlichita@cluster0-bnvxq.mongodb.net/test?retryWrites=true&w=majoritymongodb+srv://pelusa:amqlichita@cluster0-bnvxq.mongodb.net/test?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true
+    }
+  )
   .then(x =>
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   )
