@@ -5,21 +5,21 @@
     "contactNumber": "55 5604 2482",
     "website": "https://pnamexico.com/",
 
-    "longitud": [-99.2546255],
-    "latitud": [19.4256881]
+    "longitude": [-99.2546255],
+    "latitude": [19.4256881]
   },
   {
     "place": "Refugio Franciscano AC",
     "address": "Carretera México-Toluca KM 17.5, Paseo de las Lomas, 05100 Cuajimalpa de Morelos, CDMX",
     "contactNumber": "55 2661 0507",
-    "longitud": [-99.3045319],
-    "latitud": [19.4236036]
+    "longitude": [-99.3045319],
+    "latitude": [19.4236036]
   },
   {
     "place": "Milagros Caninos",
     "address": "03020 de, La Morena 1012, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
-    "longitud": [-99.2238194],
-    "latitud": [19.4433579]
+    "longitude": [-99.2238194],
+    "latitude": [19.4433579]
   },
   {
     "place": "Centro de Adopción y Rescate Animal, A.C.",
@@ -29,16 +29,16 @@
     "place": "La Casa del Mestizo",
     "address": "Nayarit 31, Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX",
     "contactNumber": "55 40621 423",
-    "longitud": [-99.2313696],
-    "latitud": [19.4445069]
+    "longitude": [-99.2313696],
+    "latitude": [19.4445069]
   },
   {
     "place": "Fundación Antonio Haghenbeck y de la Lama I.A.P.",
     "address": "Av. 5 de Mayo 10E Officina 33 2. planta, Centro Histórico de la Cdad. de México, 06000 Ciudad de México, CDMX",
     "website": "fahl.com.mx",
     "contactNumber": "55 5219 3610",
-    "latitud": [19.4611071],
-    "longitud": [-99.256072]
+    "latitude": [19.4611071],
+    "longitude": [-99.256072]
   },
   {
     "place": "Milagros Caninos",
@@ -78,15 +78,15 @@
     "address": "Calle Venustiano Carranza #18, Gustavo A. Madero, Cuautepec Barrio Alto, 07100 Ciudad de México, CDMX",
     "contactNumber": "55 2911 8150",
     "website": "www.alberguesancristobal.org",
-    "latitud": 19.5128049,
-    "longitud": -99.2502577
+    "latitude": 19.5128049,
+    "longitude": -99.2502577
   },
   {
     "place": "Cambia un destino Hospital de Animales",
     "address": " Av Chapultepec 238, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX",
     "contactNumber": "55 3330 4741",
     "email": "cambiaundestino.org",
-    "latitud": 19.4465457,
-    "longitud": 19.4465457
+    "latitude": 19.4465457,
+    "longitude": 19.4465457
   }
 ]

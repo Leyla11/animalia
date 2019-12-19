@@ -38,54 +38,54 @@ class Shelter extends Component {
     return shelter ;
   }
 
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            const user_location = [
-              position.coords.longitude,
-              position.coords.latitude
-            ];
-            map.setZoom(12).setShelter(user_location);
-            new mapboxgl.Marker({ color: "red" })
-              .setLngLat(user_location)
-              .setPopup(new mapboxgl.Popup().setHTML("<h3> You are here </h3>"))
-              .addTo(map);
-          });
-        }
+      //   if (navigator.geolocation) {
+      //     navigator.geolocation.getCurrentPosition(function(position) {
+      //       const user_location = [
+      //         position.coords.longitude,
+      //         position.coords.latitude
+      //       ];
+      //       map.setZoom(12).setShelter(user_location);
+      //       new mapboxgl.Marker({ color: "red" })
+      //         .setLngLat(user_location)
+      //         .setPopup(new mapboxgl.Popup().setHTML("<h3> You are here </h3>"))
+      //         .addTo(map);
+      //     });
+      //   }
 
-        if (this.state.shelter.longitud && this.state.shelter.latitud) {
-          const shelter_location = [
-            this.state.shelter.longitud,
-            this.state.shelter.latitud
-          ];
-          new mapboxgl.Marker({ color: "#33BBFF" })
-            .setLngLat(shelter_location)
-            .setPopup(new mapboxgl.Popup().setHTML("<h3>Posting</h3>"))
-            .addTo(map);
-        }
+      //   if (this.state.shelter.longitud && this.state.shelter.latitud) {
+      //     const shelter_location = [
+      //       this.state.shelter.longitud,
+      //       this.state.shelter.latitud
+      //     ];
+      //     new mapboxgl.Marker({ color: "#33BBFF" })
+      //       .setLngLat(shelter_location)
+      //       .setPopup(new mapboxgl.Popup().setHTML("<h3>Posting</h3>"))
+      //       .addTo(map);
+      //   }
 
-        map.addControl(
-          new mapboxgl.GeolocateControl({
-            positionOptions: {
-              enableHighAccuracy: true
-            },
-            trackUserLocation: true,
-            showUserLocation: true
-          })
-        );
+      //   map.addControl(
+      //     new mapboxgl.GeolocateControl({
+      //       positionOptions: {
+      //         enableHighAccuracy: true
+      //       },
+      //       trackUserLocation: true,
+      //       showUserLocation: true
+      //     })
+      //   );
 
-        map.addControl(
-          new MapboxDirections({
-            accessToken: mapboxgl.accessToken,
-            unit: "metric",
-            language: "es",
-            placeholderOrigin: "Select your place",
-            placeholderDestination: "Select your destination"
-          }),
-          "top-left"
-        );
+      //   map.addControl(
+      //     new MapboxDirections({
+      //       accessToken: mapboxgl.accessToken,
+      //       unit: "metric",
+      //       language: "es",
+      //       placeholderOrigin: "Select your place",
+      //       placeholderDestination: "Select your destination"
+      //     }),
+      //     "top-left"
+      //   );
 
-        map.addControl(new mapboxgl.NavigationControl());
-      };
+      //   map.addControl(new mapboxgl.NavigationControl());
+      // };
   
   render() {
     const { user } = this.state;
