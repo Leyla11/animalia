@@ -143,5 +143,5 @@ class Shelter extends Component {
     );
   }
 }
-Center.contextType = MyContext;
-export default Center;
+Shelter.contextType = MyContext;
+export default Shelter;
