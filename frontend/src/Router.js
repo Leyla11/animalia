@@ -27,9 +27,9 @@ const Router = () => (
       <Route exact path="/contribution" component={Contribution} />
       <Route exact path="/contribution-list" component={ContributionList} />
       <Route exact path="/shelter" component={Centers} />
+      <Route exat path="/shelter" component={AllShelters} />
       <Route exact path="/center/:id" component={Center} />
       <Route exact path="/centers/:Center" component={Centers} />
-      <Route exact path="/shelter" component={AllShelters}
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
