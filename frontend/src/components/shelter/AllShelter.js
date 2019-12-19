@@ -5,7 +5,7 @@ import axios from "axios";
 import Layout from "../Layout";
 import { MyContext } from "../../context/index";
 import { NavLink } from "react-router-dom";
-import 
+import refugios from "../../refugios.json"
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWx6eiIsImEiOiJjandrNmVzNzUwNWZjNGFqdGcwNmJ2ZWhpIn0.ybY6wnAtJwj-Tq0c46sW6A";
@@ -30,8 +30,10 @@ class Shelter extends Component {
   componentWillMount() {
     const data = this.props.match.params;
 
-    this.setState(() => {
-      const shelters = data
+    this.setState({ center: res.data.place });
+        const map = new mapboxgl.Map({
+          container: this.mapContainer,
+          style: "mapbox://styles/mapbox/streets-v9"
 
       return  shelters ;
     });
