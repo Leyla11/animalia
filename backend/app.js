@@ -12,10 +12,7 @@ const passport = require("./config/passport");
 
 mongoose
   .connect(
-    "mongodb+srv://pelusa:amqlichita@cluster0-bnvxq.mongodb.net/test?retryWrites=true&w=majoritymongodb+srv://pelusa:amqlichita@cluster0-bnvxq.mongodb.net/test?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true
-    }
+    "mongodb+srv://pelusa:amqlichita@cluster0-bnvxq.mongodb.net/test?retryWrites=true&w=majoritymongodb+srv://pelusa:amqlichita@cluster0-bnvxq.mongodb.net/test?retryWrites=true&w=majority"
   )
   .then(x =>
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
