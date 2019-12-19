@@ -40,10 +40,10 @@ export default class Shelter extends Component {
     this.setState(() => {
       const shelters = refugios.find();
       return { shelters };
+      console.log(shelters);
+      console.log(refugios.find());
+      console.log(this.state.shelters);
     });
-    console.log(shelters);
-    console.log(refugios.find());
-    console.log(this.state.shelters);
   }
 
   //   if (navigator.geolocation) {
