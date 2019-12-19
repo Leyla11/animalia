@@ -38,10 +38,8 @@ export default class Shelter extends Component {
   // }
   componentDidMount() {
     const shelters = refugios.find();
-    this.state.shelters = shelters
-    this.setState(
-      { shelters };
-    );
+    this.state.shelters = shelters;
+    this.setState({ shelters });
   }
 
   //   if (navigator.geolocation) {
