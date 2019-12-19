@@ -95,11 +95,7 @@ export default class Shelter extends Component {
     const { user } = this.state;
     return (
       <Layout history={this.props.history}>
-        <div>
-          {shelters.map(shelter => (
-            <div>{shelter.place}</div>
-          ))}
-        </div>
+       
         <div className="section">
           <div className="container">
             {/* <p className="has-text-centered category-center">
@@ -113,31 +109,36 @@ export default class Shelter extends Component {
                 ref={e => (this.mapContainer = e)}
               /> */}
               <div className="column is-5 data">
+              <div>
+          {shelters.map(shelter => (
+            <div>{shelter.place}</div>
+          
+        </div>
                 <div className="card">
                   <header className="card-header">
                     <p className="card-header-title card-text">
-                      {this.state.shelter.shelter}
+                      {shelter.place}
                     </p>
                   </header>
                   <div className="card-content">
                     <div className="content">
-                      <p>Adress: {this.state.shelter.address}</p>
+                      <p>Adress: {shelter.address}</p>
                       <p>
                         Email:{" "}
-                        {this.state.shelter.email
-                          ? this.state.shelter.email
+                        {shelter.email
+                          ? shelter.email
                           : "Not Available"}
                       </p>
                       <p>
                         Number:{" "}
-                        {this.state.shelter.contactNumber
-                          ? this.state.shelter.contactNumber
+                        {shelter.contactNumber
+                          ? shelter.contactNumber
                           : "Not Available"}
                       </p>
                       <p>
                         Website:{" "}
-                        {this.state.shelter.website
-                          ? this.state.shelter.website
+                        {shelter.website
+                          ? shelter.website
                           : "Not Available"}
                       </p>
                     </div>
@@ -156,6 +157,8 @@ export default class Shelter extends Component {
                     </div>
                   </div>
                 </div>
+
+))}
               </div>
             </div>
           </div>
