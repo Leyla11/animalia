@@ -34,7 +34,7 @@ export default class Shelter extends Component {
       container: this.mapContainer
       //style: "mapbox://styles/mapbox/streets-v9
     });
-    return shelter;
+    return Shelter;
   }
 
   //   if (navigator.geolocation) {
