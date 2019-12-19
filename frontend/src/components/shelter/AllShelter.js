@@ -95,8 +95,9 @@ export default class Shelter extends Component {
     const { shelters } = this.state;
     return (
       <div>
-        shelters.map((shelter)=>(
-        <div>{shelters.place}</div>) )
+        {shelters.map(shelter => (
+          <div>{shelter.place}</div>
+        ))}
       </div>
       // <Layout history={this.props.history}>
       //   <div className="section">
