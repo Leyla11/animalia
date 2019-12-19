@@ -92,6 +92,7 @@ export default class Shelter extends Component {
 
   render() {
     const { shelters } = this.state;
+    const { user } = req;
     return (
       <Layout history={this.props.history}>
         <div>
