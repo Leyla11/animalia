@@ -28,7 +28,7 @@ export default class Shelter extends Component {
   //       });
 
   // componentWillMount() {
-  //   const data = this.props.match.params;
+
   //   this.setState();
   //   // const map = new mapboxgl.Map({
   //   //   container: this.mapContainer
@@ -36,15 +36,13 @@ export default class Shelter extends Component {
   //   // });
   //   return Shelter;
   // }
-  // componentDidMount() {
-  //   this.setState(() => {
-  //     const shelters = refugios.find();
-  //     return { shelters };
-  //     console.log(shelters);
-  //     console.log(refugios.find());
-  //     console.log(this.state.shelters);
-  //   });
-  // }
+  componentDidMount() {
+    const shelters = refugios.find();
+    this.state.shelters = shelters
+    this.setState(
+      { shelters };
+    );
+  }
 
   //   if (navigator.geolocation) {
   //     navigator.geolocation.getCurrentPosition(function(position) {
@@ -99,7 +97,7 @@ export default class Shelter extends Component {
     // const { shelters } = this.state;
     return (
       <div>
-        {/* <div>{this.state.shelters} hola</div> */}
+        <div>{this.state.shelters} hola</div>
         <div>hola</div>
       </div>
       // <Layout history={this.props.history}>
