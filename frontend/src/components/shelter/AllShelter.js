@@ -93,12 +93,12 @@ export default class Shelter extends Component {
   render() {
     const { shelters } = this.state;
     return (
-      <div>
-        {shelters.map(shelter => (
-          <div>{shelter.place}</div>
-        ))}
-      </div>
       <Layout history={this.props.history}>
+        <div>
+          {shelters.map(shelter => (
+            <div>{shelter.place}</div>
+          ))}
+        </div>
         <div className="section">
           <div className="container">
             {/* <p className="has-text-centered category-center">
