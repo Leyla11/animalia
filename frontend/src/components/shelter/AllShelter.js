@@ -13,7 +13,7 @@ import refugios from "../../components/refugios.json";
 export default class Shelter extends Component {
   state = {
     // center: {},
-    shelters: undefined,
+    shelters: refugios,
     user: JSON.parse(localStorage.getItem("user"))
   };
 
@@ -36,11 +36,11 @@ export default class Shelter extends Component {
   //   // });
   //   return Shelter;
   // }
-  componentDidMount() {
-    const shelters = refugios.find();
-    this.state.shelters = shelters;
-    this.setState({ shelters });
-  }
+  // componentDidMount() {
+  //   const shelters = refugios.find();
+  //   this.state.shelters = shelters;
+  //   this.setState({ shelters });
+  // }
 
   //   if (navigator.geolocation) {
   //     navigator.geolocation.getCurrentPosition(function(position) {
@@ -92,11 +92,11 @@ export default class Shelter extends Component {
   // };
 
   render() {
-    // const { shelters } = this.state;
+    const { shelters } = this.state;
     return (
       <div>
-        <div>{this.state.shelters} hola</div>
-        <div>hola</div>
+        shelters.map((shelter, index)=>(
+        <div key={index}>{shelter.place}</div>) )
       </div>
       // <Layout history={this.props.history}>
       //   <div className="section">
