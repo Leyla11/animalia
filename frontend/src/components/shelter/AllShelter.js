@@ -7,8 +7,8 @@ import { MyContext } from "../../context/index";
 import { NavLink } from "react-router-dom";
 import refugios from "../../components/refugios.json";
 
-mapboxgl.accessToken =
-  "pk.eyJ1IjoibWx6eiIsImEiOiJjandrNmVzNzUwNWZjNGFqdGcwNmJ2ZWhpIn0.ybY6wnAtJwj-Tq0c46sW6A";
+// mapboxgl.accessToken =
+//   "pk.eyJ1IjoibWx6eiIsImEiOiJjandrNmVzNzUwNWZjNGFqdGcwNmJ2ZWhpIn0.ybY6wnAtJwj-Tq0c46sW6A";
 
 export default class Shelter extends Component {
   state = {
@@ -36,15 +36,15 @@ export default class Shelter extends Component {
   //   // });
   //   return Shelter;
   // }
-  componentDidMount() {
-    this.setState(() => {
-      const shelters = refugios.find();
-      return { shelters };
-      console.log(shelters);
-      console.log(refugios.find());
-      console.log(this.state.shelters);
-    });
-  }
+  // componentDidMount() {
+  //   this.setState(() => {
+  //     const shelters = refugios.find();
+  //     return { shelters };
+  //     console.log(shelters);
+  //     console.log(refugios.find());
+  //     console.log(this.state.shelters);
+  //   });
+  // }
 
   //   if (navigator.geolocation) {
   //     navigator.geolocation.getCurrentPosition(function(position) {
@@ -99,7 +99,7 @@ export default class Shelter extends Component {
     // const { shelters } = this.state;
     return (
       <div>
-        <div>{this.state.shelters} hola</div>
+        {/* <div>{this.state.shelters} hola</div> */}
         <div>hola</div>
       </div>
       // <Layout history={this.props.history}>
