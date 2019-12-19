@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import { MyContext } from "../../context";
 import Layout from "../Layout";
-// import MY_SERVICE from '../../services/index'
 
 class Profile extends Component {
   state = {
     user: {
       email: "",
       name: "",
-      lastName: "",
-      level: ""
+      lastName: ""
     }
   };
 

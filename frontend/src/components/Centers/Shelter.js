@@ -12,6 +12,7 @@ mapboxgl.accessToken =
 class Center extends Component {
   state = {
     center: {},
+    shelter: {},
     user: JSON.parse(localStorage.getItem("user"))
   };
 
