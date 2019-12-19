@@ -5,7 +5,7 @@ import axios from "axios";
 import Layout from "../Layout";
 import { MyContext } from "../../context/index";
 import { NavLink } from "react-router-dom";
-import refugios from "../../refugios.json";
+import refugios from "../../components/refugios.json";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWx6eiIsImEiOiJjandrNmVzNzUwNWZjNGFqdGcwNmJ2ZWhpIn0.ybY6wnAtJwj-Tq0c46sW6A";
