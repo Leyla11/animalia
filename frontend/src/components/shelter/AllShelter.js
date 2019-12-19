@@ -40,7 +40,7 @@ class Shelter extends Component {
         }
 
         if (this.state.shelter.longitud && this.state.shelter.latitud) {
-          const center_location = [
+          const shelter_location = [
             this.state.shelter.longitud,
             this.state.shelter.latitud
           ];
