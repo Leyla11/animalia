@@ -12,7 +12,6 @@ import refugios from "../../components/refugios.json";
 
 export default class Shelter extends Component {
   state = {
-    // center: {},
     shelters: refugios,
     user: JSON.parse(localStorage.getItem("user"))
   };
@@ -99,69 +98,69 @@ export default class Shelter extends Component {
           <div>{shelter.place}</div>
         ))}
       </div>
-      // <Layout history={this.props.history}>
-      //   <div className="section">
-      //     <div className="container">
-      //       {/* <p className="has-text-centered category-center">
-      //         Categoria: {this.state.shelter.place}
-      //       </p> */}
+      <Layout history={this.props.history}>
+        <div className="section">
+          <div className="container">
+            {/* <p className="has-text-centered category-center">
+              Categoria: {this.state.shelter.place}
+            </p> */}
 
-      //       <div className="columns">
-      //         {/* <div
-      //           className="column is -7 map"
-      //           style={{ width: "50vw", height: "90vh" }}
-      //           ref={e => (this.mapContainer = e)}
-      //         /> */}
-      //         <div className="column is-5 data">
-      //           <div className="card">
-      //             <header className="card-header">
-      //               <p className="card-header-title card-text">
-      //                 {this.state.shelter.shelter}
-      //               </p>
-      //             </header>
-      //             <div className="card-content">
-      //               <div className="content">
-      //                 <p>Adress: {this.state.shelter.address}</p>
-      //                 <p>
-      //                   Email:{" "}
-      //                   {this.state.shelter.email
-      //                     ? this.state.shelter.email
-      //                     : "Not Available"}
-      //                 </p>
-      //                 <p>
-      //                   Number:{" "}
-      //                   {this.state.shelter.contactNumber
-      //                     ? this.state.shelter.contactNumber
-      //                     : "Not Available"}
-      //                 </p>
-      //                 <p>
-      //                   Website:{" "}
-      //                   {this.state.shelter.website
-      //                     ? this.state.shelter.website
-      //                     : "Not Available"}
-      //                 </p>
-      //               </div>
-      //               <div className="home-button">
-      //                 {user.role === "USUARIO" ? (
-      //                   <>
-      //                     <NavLink exact to="/allShelter">
-      //                       <button className="button is-primary">
-      //                         Add Shelter 🐾
-      //                       </button>
-      //                     </NavLink>
-      //                   </>
-      //                 ) : (
-      //                   <></>
-      //                 )}
-      //               </div>
-      //             </div>
-      //           </div>
-      //         </div>
-      //       </div>
-      //     </div>
-      //     //{" "}
-      //   </div>
-      // </Layout>
+            <div className="columns">
+              {/* <div
+                className="column is -7 map"
+                style={{ width: "50vw", height: "90vh" }}
+                ref={e => (this.mapContainer = e)}
+              /> */}
+              <div className="column is-5 data">
+                <div className="card">
+                  <header className="card-header">
+                    <p className="card-header-title card-text">
+                      {this.state.shelter.shelter}
+                    </p>
+                  </header>
+                  <div className="card-content">
+                    <div className="content">
+                      <p>Adress: {this.state.shelter.address}</p>
+                      <p>
+                        Email:{" "}
+                        {this.state.shelter.email
+                          ? this.state.shelter.email
+                          : "Not Available"}
+                      </p>
+                      <p>
+                        Number:{" "}
+                        {this.state.shelter.contactNumber
+                          ? this.state.shelter.contactNumber
+                          : "Not Available"}
+                      </p>
+                      <p>
+                        Website:{" "}
+                        {this.state.shelter.website
+                          ? this.state.shelter.website
+                          : "Not Available"}
+                      </p>
+                    </div>
+                    <div className="home-button">
+                      {user.role === "USUARIO" ? (
+                        <>
+                          <NavLink exact to="/allShelter">
+                            <button className="button is-primary">
+                              Add Shelter 🐾
+                            </button>
+                          </NavLink>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          //{" "}
+        </div>
+      </Layout>
     );
   }
 }
