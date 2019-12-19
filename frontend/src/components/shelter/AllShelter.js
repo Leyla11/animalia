@@ -10,7 +10,7 @@ import refugios from "../../refugios.json"
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWx6eiIsImEiOiJjandrNmVzNzUwNWZjNGFqdGcwNmJ2ZWhpIn0.ybY6wnAtJwj-Tq0c46sW6A";
 
-class Shelter extends Component {
+  export default class Shelter extends Component {
   state = {
     center: {},
     shelters: {},
@@ -157,4 +157,4 @@ class Shelter extends Component {
   }
 
 // Shelter.contextType = MyContext;
-export default Shelter;
+
