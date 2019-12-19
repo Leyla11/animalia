@@ -110,10 +110,10 @@ export default class Shelter extends Component {
               /> */}
               <div className="column is-5 data">
               <div>
+                </div>
           {shelters.map(shelter => (
             <div>{shelter.place}</div>
           
-        </div>
                 <div className="card">
                   <header className="card-header">
                     <p className="card-header-title card-text">
