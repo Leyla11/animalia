@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWx6eiIsImEiOiJjandrNmVzNzUwNWZjNGFqdGcwNmJ2ZWhpIn0.ybY6wnAtJwj-Tq0c46sW6A";
 
-class Center extends Component {
+class Shelter extends Component {
   state = {
     center: {},
     user: JSON.parse(localStorage.getItem("user"))

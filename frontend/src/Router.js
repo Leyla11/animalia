@@ -13,7 +13,7 @@ import CreateNew from "./components/shelter/AddNew";
 import Test from "./components/Profile/Test";
 import Contribution from "./components/Profile/Contribution";
 import ContributionList from "./components/Profile/ContributionList";
-import Shell from "./components/shelter/AllShelter";
+import Shelter from "./components/shelter/AllShelter";
 
 const Router = () => (
   <BrowserRouter>
@@ -28,7 +28,7 @@ const Router = () => (
       <Route exact path="/contribution" component={Contribution} />
       <Route exact path="/contribution-list" component={ContributionList} />
       <Route exact path="/shelter" component={Centers} />
-      <Route exat path="/shelters" component={AllShelters} />
+      <Route exat path="/shelters" component={Shelter} />
       <Route exact path="/center/:id" component={Center} />
       <Route exact path="/centers/:Center" component={Centers} />
       <Route component={NotFound} />
