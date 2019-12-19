@@ -96,9 +96,9 @@ export default class Shelter extends Component {
   // };
 
   render() {
-    const { user } = this.state;
+    const { shelters } = this.state;
     return (
-      <div>{this.state.shelters}</div>
+      <div>{this.state.shelters} hola</div>
       // <Layout history={this.props.history}>
       //   <div className="section">
       //     <div className="container">
