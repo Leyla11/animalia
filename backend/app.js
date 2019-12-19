@@ -44,7 +44,7 @@ const corsOptions = {
   enablePreflight: true
 };
 
-const whitelist = "https://app.netlify.com/sites/suspicious-villani-0c139b";
+const whitelist = "https://suspicious-villani-0c139b.netlify.com";
 
 //este cors es la configyracion inicial
 app.use(
