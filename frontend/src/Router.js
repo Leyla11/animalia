@@ -28,7 +28,7 @@ const Router = () => (
       <Route exact path="/contribution" component={Contribution} />
       <Route exact path="/contribution-list" component={ContributionList} />
       <Route exact path="/shelter" component={Centers} />
-      <Route exat path="/shelters" component={Shelter} />
+      <Route exat path="/allshelters" component={Shelter} />
       <Route exact path="/center/:id" component={Center} />
       <Route exact path="/centers/:Center" component={Centers} />
       <Route component={NotFound} />
